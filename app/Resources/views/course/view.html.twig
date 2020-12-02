@@ -1,0 +1,26 @@
+<style>
+th, td {
+  padding: 10px;
+}
+th {
+  text-align: right;
+}
+</style>
+
+<h1>Course Created or Modified</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <th>id:</th>
+    <td>{{ course.id }}</td>
+    </tr>
+    <tr>
+      <th>name:</th>
+      <td>{{ course.name }}</td>
+  </tbody>
+</table>
+
+<br/>
+<a href="/show-course">View All</a> -
+<a href="/update-course/{{ course.id }}">Modify</a>

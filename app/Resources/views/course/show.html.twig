@@ -1,0 +1,38 @@
+<style>
+    th,
+    td {
+        padding: 10px;
+    }
+    
+    th {
+        text-align: left;
+    }
+</style>
+
+<h1>All Course</h1>
+
+{% if course is not empty %}
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>course</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in course %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.name }}</td>
+            <td><a href="delete-course/{{ c.id }}">Delete</a></td>
+            <td><a href="update-course/{{ c.id }}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No course found.</p>
+{% endif %}
+
+<br/>
+<a href="/create-course">Create New</a>
